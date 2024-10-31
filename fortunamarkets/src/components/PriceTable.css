@@ -1,0 +1,128 @@
+.home-containers {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.left-section {
+  width: 50%;
+  padding: 20px;
+}
+
+.left-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #9945FF;
+  line-height: 1.2;
+}
+
+.left-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.cta-buttons input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 475px;
+}
+
+.cta-buttons button {
+  background-color: #9945FF;
+  color: #141414;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+}
+
+.other-options {
+  margin-top: 20px;
+}
+
+.login-options button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-section {
+  width: 40%;
+}
+
+.price-table-container {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs button.active {
+  color: #9945FF;
+  border-bottom: 2px solid #9945FF;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #292929;
+  border-radius: 8px;
+}
+
+.asset-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.asset-name {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.asset-price {
+  font-size: 1.2rem;
+}
+
+.positive {
+  color: #00ff00;
+}
+
+.negative {
+  color: #ff0000;
+}
