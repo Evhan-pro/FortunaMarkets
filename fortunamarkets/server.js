@@ -31,7 +31,7 @@ const JWT_SECRET = 'your_jwt_secret_key';
 
 // Route pour l'inscription
 app.post('/register', (req, res) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
 
   // Vérifier si l'utilisateur existe déjà
   db.query('SELECT * FROM users WHERE email = ?', [email], (err, result) => {
@@ -48,16 +48,24 @@ app.post('/register', (req, res) => {
         return res.status(500).json({ message: 'Erreur lors du hachage du mot de passe' });
       }
 
-      // Insérer le nouvel utilisateur dans la base de données
-      db.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword], (err, result) => {
-        if (err) {
-          return res.status(500).json({ message: 'Erreur lors de l\'enregistrement' });
+      // Définir l'image de profil par défaut
+      const defaultProfileImage = '/img/default-profile.jpg';
+
+      // Insérer le nouvel utilisateur dans la base de données avec username et image par défaut
+      db.query(
+        'INSERT INTO users (username, email, password, profile_image) VALUES (?, ?, ?, ?)',
+        [username, email, hashedPassword, defaultProfileImage],
+        (err, result) => {
+          if (err) {
+            return res.status(500).json({ message: 'Erreur lors de l\'enregistrement' });
+          }
+          res.status(201).json({ message: 'Inscription réussie' });
         }
-        res.status(201).json({ message: 'Inscription réussie' });
-      });
+      );
     });
   });
 });
+
 
 // Route pour la connexion
 app.post('/login', (req, res) => {
