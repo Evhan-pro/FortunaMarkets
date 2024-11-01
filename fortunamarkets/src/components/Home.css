@@ -1,0 +1,396 @@
+:root {
+    --solana-green: #00FFA3;
+    --solana-purple: #9945FF;
+    --solana-dark: #141414;
+    --solana-gray: #202020;
+    --text-light: #ffffff;
+    --text-dark: #141414;
+  }
+  
+  /* Global */
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--solana-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+
+  section {
+    background-color: var(--solana-dark); /* Appliquez cette couleur à toutes les sections */
+  }
+  
+  .home-container {
+    width: 100%;
+    padding: 50px;
+    background-color: var(--solana-gray);
+  }
+  
+  /* Custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--solana-dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--solana-purple), var(--solana-green));
+    border-radius: 20px;
+  }
+  
+/* Navbar avec menu déroulant */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--solana-gray);
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* z-index élevé pour s'assurer que la navbar reste au-dessus */
+    top: 0; /* Aligne la navbar en haut de la page */
+  }
+  
+  .navbar-logo a {
+    color: var(--solana-green);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    color: var(--text-light);
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+    position: relative;
+  }
+  
+  .navbar-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    display: block;
+  }
+  
+  /* Bouton de connexion */
+  .login-btn {
+    background-color: var(--solana-purple);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #8520ff; /* Couleur légèrement plus foncée */
+  }
+  
+  /* Dropdown menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--solana-gray);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1000; /* z-index pour s'assurer que le menu déroulant s'affiche bien */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: var(--text-light);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: var(--solana-dark);
+  }
+  
+  /* Hero section avec effet de parallaxe */
+  .hero-section {
+    height: 100vh;
+    background-image: url('../../public/img/fond.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 80px;
+  }  
+  
+  .hero-content {
+    text-align: center;
+    color: var(--text-light);
+    background: rgba(0, 0, 0, 0.5); /* Optionnel : fond semi-transparent pour améliorer la lisibilité */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out 0.5s;
+  }
+  
+  .cta-btn {
+    background-color: var(--solana-green);
+    color: var(--text-dark);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
+    background-color: #00e089; /* Couleur légèrement plus foncée */
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Live Prices */
+  .live-prices-section {
+    padding: 80px 20px;
+    background-color: var(--solana-gray);
+  }
+  
+  .live-prices-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+  }
+  
+  .prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .prices-table th, .prices-table td {
+    padding: 15px;
+    border: 1px solid var(--solana-gray);
+    text-align: center;
+  }
+  
+  .prices-table th {
+    background-color: var(--solana-gray);
+    font-weight: bold;
+  }
+  
+  .prices-table td {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .prices-table td.positive {
+    color: #00FF00;
+    background-color: rgba(0, 255, 0, 0.1);
+  }
+  
+  .prices-table td.negative {
+    color: #FF0000;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+  
+  /* Services */
+  .services-section {
+    padding: 80px 20px;
+    background-color: var(--solana-gray);
+  }
+  
+  .services-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-box {
+    background-color: var(--solana-dark);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-box h3 {
+    color: var(--solana-green);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  
+  .service-box p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+  }
+  
+  /* Appel à l'action avec effet parallaxe */
+  .cta-section {
+    height: 60vh;
+    background-image: url('../../public/img/fond_second_home.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .cta-section h2 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out 0.5s;
+  }
+  
+  .cta-section .cta-btn {
+    background-color: var(--solana-purple);
+    color: var(--text-light);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .cta-section .cta-btn:hover {
+    transform: scale(1.05);
+    background-color: #8833ff; /* Couleur légèrement plus foncée */
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--solana-gray);
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-content p {
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  /* Animations générales */
+  .fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-up {
+    animation: slideUp 1.5s ease-in-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .navbar-links {
+      flex-direction: column;
+      background-color: var(--solana-gray);
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      display: none;
+    }
+  
+    .navbar-links li {
+      margin: 10px 0;
+    }
+  
+    .navbar:hover .navbar-links {
+      display: flex;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+  }
+  
