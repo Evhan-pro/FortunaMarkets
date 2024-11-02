@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState(''); // Message de succès ou d'erreur
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,13 +28,16 @@ const Register = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage('Inscription réussie ! Vous pouvez maintenant vous connecter.');
+        // Enregistrer le succès de l'inscription dans le localStorage
+        localStorage.setItem('registrationSuccess', 'true');
+        // Rediriger vers la page de connexion
+        navigate('/login');
       } else {
-        setMessage(data.message || 'Erreur lors de l\'inscription');
+        setErrorMessage(data.message || 'Erreur lors de l\'inscription');
       }
     } catch (error) {
       console.error('Erreur lors de l\'inscription:', error);
-      setMessage('Une erreur est survenue. Veuillez réessayer.');
+      setErrorMessage('Une erreur est survenue. Veuillez réessayer.');
     }
   };
 
@@ -70,7 +75,7 @@ const Register = () => {
           </div>
           <button type="submit" className="btn btn-primary w-100">S'inscrire</button>
         </form>
-        {message && <p>{message}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
     </div>
   );
