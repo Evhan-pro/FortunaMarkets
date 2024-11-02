@@ -33,6 +33,20 @@ div .auth-container{
     transition: all 0.3 ease;
     color: #fff;
   }
+
+  div .insc-container{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 5%;
+    padding: 3em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border : 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    transition: all 0.3 ease;
+    color: #fff;
+  }
   
   h2 {
     text-align: center;
@@ -41,6 +55,19 @@ div .auth-container{
   label {
     display: block;
     margin-bottom: 0.5em;
+  }
+
+  .auth-container .auth-card .text-center a {
+    color: var(--solana-green);
+    font-weight: bold;
+    text-decoration: none;
+  
+    /* Animation au survol */
+    transition: color 0.3s ease;
+  }
+  
+  .auth-container .auth-card .text-center a:hover {
+    color: #40d545;
   }
   
   input {
@@ -89,8 +116,7 @@ div .auth-container{
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 320px; /* Largeur fixe pour aligner le contenu */
-    background-color: #4CAF50;
+    width: 320px;
     color: white;
     padding: 16px;
     border-radius: 8px;
@@ -98,7 +124,7 @@ div .auth-container{
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre le texte horizontalement */
+    align-items: center;
     text-align: center;
   }
   
@@ -112,6 +138,14 @@ div .auth-container{
     color: white;
     font-size: 18px;
     cursor: pointer;
+  }
+
+  .notification.success {
+    background-color: #4CAF50; /* Vert pour les messages de succès */
+  }
+
+  .notification.error {
+    background-color: #f44336; /* Rouge pour les messages d'erreur */
   }
   
   .progress-bar {
@@ -130,4 +164,47 @@ div .auth-container{
     transition: width 0.1s linear;
   }
   
+  .notification .close-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
   
+  .password-critere {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #888;
+  }
+  
+  .password-critere p {
+    margin: 4px 0;
+  }
+  
+  .password-critere .valid {
+    color: #8bc34a;
+  }
+  
+  .password-critere .invalid {
+    color: #f44336;
+  }
+  
+  .password-strength-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #d3d3d3;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .strength {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+  }

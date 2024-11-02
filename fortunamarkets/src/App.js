@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Home from './components/Home';
 import CryptoList from './components/CryptoList';
 import CryptoDetails from './components/CryptoDetails';
+import Profile from './components/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/crypto" element={<CryptoList />} />
         <Route path="/crypto/:id" element={<CryptoDetails />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
