@@ -1,41 +1,202 @@
+/* Menu */
+
 .profile-container {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
   }
   
-  .profile-header {
+  .sidebar {
+    width: 90px;
+    transition: width 0.3s;
+    overflow: hidden;
+    background-color: #202121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
   }
   
-  .profile-image {
-    width: 50px;
-    height: 50px;
+  .sidebar:hover {
+    width: 250px;
+  }
+  
+  .logo {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .sidebar-icon-logo {
+    width: 60px;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar-expanded-logo {
+    display: none;
+    width: 230px;
+    transition: width 0.3s ease;
+    margin: 0 auto;
+  }
+  
+  .sidebar:hover .sidebar-icon-logo {
+    display: none;
+  }
+  
+  .sidebar:hover .sidebar-expanded-logo {
+    display: block;
+  }
+  
+  .profile-image-container {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    cursor: pointer;
+  }
+  
+  .sidebar:hover .profile-image-container {
+    display: block;
+  }
+  
+  .profile-image-large {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    cursor: pointer;
+    margin-bottom: 5px;
+    position: relative;
   }
   
-  .profile-menu {
+  .edit-icon {
     position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    top: 0;
+    right: 5px;
+    font-size: 16px;
+    color: #007bff;
+    display: none;
+  }
+  
+  .profile-image-container:hover .edit-icon {
+    display: block;
+  }
+  
+  .username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+  }
+  
+  .menu-item {
     display: flex;
-    flex-direction: column;
-    width: 150px;
-  }
-  
-  .profile-menu p {
-    margin: 8px 0;
-    padding: 8px;
+    align-items: center;
+    padding: 10px;
     cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s;
   }
   
-  .profile-menu p:hover {
-    background-color: #f0f0f0;
+  .icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .menu-text {
+    display: none;
+  }
+  
+  .sidebar:hover .menu-text {
+    display: inline;
+  }
+  
+  .logout-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .logout-icon {
+    color: #f44336;
+    font-size: 24px;
+    transition: color 0.2s;
+  }
+  
+  .sidebar:hover .logout-icon {
+    color: #d32f2f;
+  }
+  
+  
+  /* Tableau portefeuille */
+  
+  .total-value-display h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .timeframe-buttons button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #007bff;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .timeframe-buttons button:hover {
+    background: #e0e0e0;
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+  }
+  
+  .total-value-display {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .total-value-display h3 {
+    font-size: 2rem;
+    color: #00ff99;
+    font-weight: bold;
+  }
+  
+  .timeframe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .timeframe-buttons button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .timeframe-buttons button:hover,
+  .timeframe-buttons button:focus {
+    background-color: #007bff;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 400px;
+  }
+  
+  .notification.success {
+    background-color: #28a745;
   }
   
